@@ -1,19 +1,19 @@
 package udp.poo.sisacad.dominio;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class BasePessoa extends BaseIdentificador {
     
     protected String nome;
     protected String telefone;
-    protected Date dataNasc;
+    protected Calendar dataNasc;
     protected String rg;
     protected String cpf;
     
     public BasePessoa() {
     }
 
-    public BasePessoa(long id, String nome, String telefone, Date dataNasc, String rg, String cpf) {
+    public BasePessoa(long id, String nome, String telefone, Calendar dataNasc, String rg, String cpf) {
         super(id);
         this.nome = nome;
         this.telefone = telefone;
@@ -38,11 +38,11 @@ public class BasePessoa extends BaseIdentificador {
         this.telefone = telefone;
     }
 
-    public Date getDataNasc() {
+    public Calendar getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(Date dataNasc) {
+    public void setDataNasc(Calendar dataNasc) {
         this.dataNasc = dataNasc;
     }
 
