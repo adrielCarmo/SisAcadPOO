@@ -2,7 +2,7 @@ package udp.poo.sisacad.dominio;
 
 import java.util.Date;
 
-public class BaseFuncionario extends BasePessoa {
+public abstract class BaseFuncionario extends BasePessoa {
     
     protected long matricula;
     protected String setor;

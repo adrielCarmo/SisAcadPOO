@@ -1,9 +1,14 @@
-public class Main {
-    public static void main(String[] args) {
-        System.out.printf("Hello and welcome!\n");
+import udp.poo.sisacad.dominio.Aluno;
+import udp.poo.sisacad.servico.AlunoServico;
 
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("i = " + i);
+import java.text.ParseException;
+
+public class Main {
+    public static void main(String[] args) throws ParseException {
+        AlunoServico serv = new AlunoServico();
+        for (Aluno aluno : serv.listar()) {
+            System.out.println("-----------------------------------");
+            aluno.imprimir();
         }
     }
 }

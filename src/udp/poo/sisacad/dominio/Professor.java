@@ -23,4 +23,8 @@ public class Professor extends BaseFuncionario{
         this.cargo = cargo;
     }
 
+    @Override
+    public void imprimir() {
+
+    }
 }
