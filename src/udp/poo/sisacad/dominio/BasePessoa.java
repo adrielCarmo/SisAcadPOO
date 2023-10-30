@@ -13,6 +13,7 @@ public abstract class BasePessoa extends BaseIdentificador implements IImpressao
     protected Endereco endereco;
     
     public BasePessoa() {
+
     }
 
     public BasePessoa(long id, String nome, String telefone, Date dataNasc, String rg, String cpf, Usuario user,

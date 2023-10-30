@@ -81,6 +81,7 @@ public class Aluno extends BasePessoa {
         System.out.println("ID: " + this.getId());
         System.out.println("Nome: " + this.getNome());
         System.out.println("Endereço: " + this.endereco);
+        //System.out.println("Endereço: " + this.endereco);
         System.out.println("Telefone: " + this.getTelefone());
         System.out.println("RG: " + this.getRg());
         System.out.println("CPF: " + this.getCpf());
