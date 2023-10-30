@@ -1,6 +1,7 @@
 package udp.poo.sisacad.fakedb;
 
 import udp.poo.sisacad.dominio.Aluno;
+import udp.poo.sisacad.dominio.Turma;
 
 import java.text.ParseException;
 
@@ -8,6 +9,7 @@ public class AlunoFakeDB extends BaseFakeDB<Aluno> {
 
     public AlunoFakeDB() throws ParseException {
         super();
+
     }
 
     @Override
