@@ -2,7 +2,7 @@ package udp.poo.sisacad.dominio;
 
 import java.util.Date;
 
-public class BaseFuncionario extends BasePessoa {
+public abstract class BaseFuncionario extends BasePessoa {
     
     protected long matricula;
     protected String setor;
@@ -13,9 +13,10 @@ public class BaseFuncionario extends BasePessoa {
     public BaseFuncionario() {
     }
 
-    public BaseFuncionario(long id, String nome, String telefone, Date dataNasc, String rg, String cpf, long matricula,
-            String setor, double salario, Date dataVinculoInicial, Date dataVinculoFinal) {
-        super(id, nome, telefone, dataNasc, rg, cpf);
+    public BaseFuncionario(long id, String nome, String telefone, Date dataNasc, String rg, String cpf, Usuario user,
+            Endereco endereco, long matricula, String setor, double salario, Date dataVinculoInicial,
+            Date dataVinculoFinal) {
+        super(id, nome, telefone, dataNasc, rg, cpf, user, endereco);
         this.matricula = matricula;
         this.setor = setor;
         this.salario = salario;
