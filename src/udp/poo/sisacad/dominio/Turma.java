@@ -5,20 +5,21 @@ import java.util.ArrayList;
 public class Turma extends BaseIdentificador {
     
     private int capacidadeMaxAlunos;
-    private Disciplina disciplina;
+    private ArrayList<Disciplina> disciplinas;
     private ArrayList <Aluno> alunos;
     private ArrayList <Professor> professores;
 
     public Turma() {
     }
 
-    public Turma(long id, int capacidadeMaxAlunos, Disciplina disciplina, ArrayList<Aluno> alunos,
+    public Turma(long id, int capacidadeMaxAlunos, ArrayList<Disciplina> disciplinas, ArrayList<Aluno> alunos,
             ArrayList<Professor> professores) {
         super(id);
         this.capacidadeMaxAlunos = capacidadeMaxAlunos;
-        this.disciplina = disciplina;
+        this.disciplinas = disciplinas;
         this.alunos = alunos;
         this.professores = professores;
+
     }
 
     public int getCapacidadeMaxAlunos() {
@@ -29,12 +30,12 @@ public class Turma extends BaseIdentificador {
         this.capacidadeMaxAlunos = capacidadeMaxAlunos;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public ArrayList<Disciplina> getDisciplinas() {
+        return disciplinas;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 
     public ArrayList<Aluno> getAlunos() {
