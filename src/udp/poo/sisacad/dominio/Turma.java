@@ -2,7 +2,7 @@ package udp.poo.sisacad.dominio;
 
 import java.util.ArrayList;
 
-public class Turma extends BaseIdentificador{
+public class Turma extends BaseIdentificador implements IImpressao{
     private int capMaxAlunos;
     private ArrayList<Disciplina> disciplinas;
     private ArrayList<Professor> professores;
@@ -49,5 +49,14 @@ public class Turma extends BaseIdentificador{
 
     public void setAlunos(ArrayList<Aluno> alunos) {
         this.alunos = alunos;
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("ID da Turma:" + this.getId());
+        System.out.println("Capacidade Máxima de Alunos: " + this.getCapMaxAlunos());
+        System.out.println("Disciplina(as): " + this.getDisciplinas());
+        System.out.println("Professor(es): " + this.getProfessores());
+        System.out.println("Quantidade de Alunos na Turma: " + this.getAlunos().size());
     }
 }
