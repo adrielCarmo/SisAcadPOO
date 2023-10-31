@@ -9,8 +9,7 @@ public class Turma extends BaseIdentificador {
     private ArrayList<Aluno> alunos;
     private ArrayList<Professor> professores;
 
-    public Turma(long id) {
-        this.setId(id);
+    public Turma() {
     }
 
     public Turma(long id, int capacidadeMaxAlunos, ArrayList<Disciplina> disciplinas, ArrayList<Aluno> alunos,

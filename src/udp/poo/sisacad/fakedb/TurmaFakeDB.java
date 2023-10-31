@@ -11,6 +11,6 @@ public class TurmaFakeDB extends BaseFakeDB<Turma>{
 
     @Override
     protected void carregarDados() throws ParseException {
-        this.tabela.add(new Turma(1L));
+        this.tabela.add(new Turma());
     }
 }

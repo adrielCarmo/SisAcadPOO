@@ -5,33 +5,32 @@ import java.util.Date;
 
 public class Usuario extends BaseIdentificador {
 
-    private String usuario;
+    private String username;
     private String senha;
     private String email;
     private boolean ativo;
     private Date dataInsercao;
-    private ArrayList <PerfilUsuario> perfis;
+    private PerfilUsuario perfilUsuario;
     
     public Usuario() {
     }
 
-    public Usuario(long id, String usuario, String senha, String email, boolean ativo, Date dataInsercao,
-            ArrayList<PerfilUsuario> perfis) {
+    public Usuario(long id, String username, String senha, String email, boolean ativo, Date dataInsercao, PerfilUsuario perfilUsuario) {
         super(id);
-        this.usuario = usuario;
+        this.username = username;
         this.senha = senha;
         this.email = email;
         this.ativo = ativo;
         this.dataInsercao = dataInsercao;
-        this.perfis = perfis;
+        this.perfilUsuario = perfilUsuario;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getSenha() {
@@ -66,12 +65,11 @@ public class Usuario extends BaseIdentificador {
         this.dataInsercao = dataInsercao;
     }
 
-    public ArrayList<PerfilUsuario> getPerfis() {
-        return perfis;
+    public PerfilUsuario getPerfilUsuario() {
+        return perfilUsuario;
     }
 
-    public void setPerfis(ArrayList<PerfilUsuario> perfis) {
-        this.perfis = perfis;
+    public void setPerfilUsuario(PerfilUsuario perfilUsuario) {
+        this.perfilUsuario = perfilUsuario;
     }
-    
 }
