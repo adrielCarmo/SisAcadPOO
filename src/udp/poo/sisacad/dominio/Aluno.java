@@ -65,4 +65,21 @@ public class Aluno extends BasePessoa{
     public void imprimir() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "periodo=" + periodo +
+                ", registroAcademico=" + registroAcademico +
+                ", aprovado=" + aprovado +
+                ", rendEscolar=" + rendEscolar +
+                ", turma=" + turma +
+                ", nome='" + nome + '\'' +
+                ", dataNasc=" + dataNasc +
+                ", rg='" + rg + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", usuario=" + usuario +
+                ", id=" + id +
+                '}';
+    }
 }

@@ -18,22 +18,22 @@ public class AlunoServico extends BaseServico<AlunoRepo, Aluno> {
     }
 
     @Override
-    public Aluno obter(Long id) {
+    public Aluno obter(int id) {
         return this.repo.read(id);
     }
 
     @Override
-    public ArrayList<Aluno> listar() {
+    public ArrayList<Aluno> listarTudo() {
         return this.repo.readAll();
     }
 
     @Override
     public Aluno atualizar(Aluno tupla) {
-        return null;
+        return this.repo.update(tupla);
     }
 
     @Override
-    public Aluno deletar(Long id) {
-        return null;
+    public Aluno excluir(int id) {
+        return this.repo.delete(id);
     }
 }

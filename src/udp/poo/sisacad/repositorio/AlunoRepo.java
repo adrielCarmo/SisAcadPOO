@@ -5,7 +5,7 @@ import udp.poo.sisacad.fakedb.AlunoFakeDB;
 
 import java.text.ParseException;
 
-public class AlunoRepo extends BaseRepoCRUD<AlunoFakeDB, Aluno>{
+public class AlunoRepo extends BaseRepositorio<AlunoFakeDB, Aluno> {
 
     public AlunoRepo() throws ParseException {
         this.db = new AlunoFakeDB();
@@ -15,7 +15,7 @@ public class AlunoRepo extends BaseRepoCRUD<AlunoFakeDB, Aluno>{
     @Override
     public Aluno create(Aluno aluno) {
         int tamanho = this.dataset.size() - 1; // pega o tamanho da lista
-        Long proxID = this.dataset.get(tamanho).getId(); // busca o ID da ultima posicao da lista e armazena
+        int proxID = this.dataset.get(tamanho).getId(); // busca o ID da ultima posicao da lista e armazena
         proxID++;
         aluno.setId(proxID);
         this.dataset.add(aluno); // add o aluno na lista do dataset após setar o seu no ID
@@ -23,7 +23,7 @@ public class AlunoRepo extends BaseRepoCRUD<AlunoFakeDB, Aluno>{
     }
 
     @Override
-    public Aluno read(Long id) {
+    public Aluno read(int id) {
         for (Aluno aluno : this.dataset) {
             if(aluno.getId() == id) {
                 return aluno;
@@ -36,18 +36,17 @@ public class AlunoRepo extends BaseRepoCRUD<AlunoFakeDB, Aluno>{
     public Aluno update(Aluno aluno) {
         Aluno alvo = this.read(aluno.getId());
         alvo.setNome(aluno.getNome());
-        alvo.setTelefone(aluno.getTelefone());
         alvo.setDataNasc(aluno.getDataNasc());
         alvo.setCpf(aluno.getCpf());
         alvo.setRg(aluno.getRg());
         alvo.setRegistroAcademico(aluno.getRegistroAcademico());
         alvo.setPeriodo(aluno.getPeriodo());
-        alvo.setSituacao(aluno.getSituacao());
+        alvo.setAprovado(aluno.isAprovado());
         return alvo;
     }
 
     @Override
-    public Aluno delete(Long id) {
+    public Aluno delete(int id) {
         Aluno alvo = this.read(id);
         this.dataset.remove(alvo);
         return alvo;

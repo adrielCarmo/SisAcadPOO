@@ -6,9 +6,9 @@ import java.text.ParseException;
 public class Main {
     public static void main(String[] args) throws ParseException {
         AlunoServico serv = new AlunoServico();
-        for (Aluno aluno : serv.listar()) {
+        for (Aluno aluno : serv.listarTudo()) {
             System.out.println("-----------------------------------");
-            aluno.imprimir();
+            System.out.println(aluno.toString());
         }
     }
 }
