@@ -11,8 +11,8 @@ public abstract class BaseFuncionario extends BasePessoa {
     public BaseFuncionario() {
     }
 
-    public BaseFuncionario(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, String setor, double salario, Date dataAdmissao, Date dataDemissao) {
-        super(id, nome, dataNasc, rg, cpf, usuario);
+    public BaseFuncionario(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco, String setor, double salario, Date dataAdmissao, Date dataDemissao) {
+        super(id, nome, dataNasc, rg, cpf, usuario, endereco);
         this.setor = setor;
         this.salario = salario;
         this.dataAdmissao = dataAdmissao;

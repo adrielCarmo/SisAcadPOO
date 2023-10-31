@@ -5,10 +5,13 @@ import java.text.ParseException;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
-        AlunoServico serv = new AlunoServico();
+        Menu menuInicial = new Menu();
+        menuInicial.executar();
+
+        /*AlunoServico serv = new AlunoServico();
         for (Aluno aluno : serv.listarTudo()) {
             System.out.println("-----------------------------------");
-            System.out.println(aluno.toString());
-        }
+            aluno.imprimir();
+        }*/
     }
 }

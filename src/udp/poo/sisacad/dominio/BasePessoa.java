@@ -8,17 +8,19 @@ public abstract class BasePessoa extends BaseIdentificador implements IImpressao
     protected String rg;
     protected String cpf;
     protected Usuario usuario;
+    protected Endereco endereco;
 
     public BasePessoa() {
     }
 
-    public BasePessoa(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario) {
+    public BasePessoa(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco) {
         super(id);
         this.nome = nome;
         this.dataNasc = dataNasc;
         this.rg = rg;
         this.cpf = cpf;
         this.usuario = usuario;
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -59,5 +61,13 @@ public abstract class BasePessoa extends BaseIdentificador implements IImpressao
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
