@@ -31,4 +31,4 @@ bin/
 /.idea/
 
 ### Java ###
-/src/*.class
+/src/**/*.class
