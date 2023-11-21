@@ -3,11 +3,9 @@ package udp.poo.sisacad.repositorio;
 import udp.poo.sisacad.dominio.Aluno;
 import udp.poo.sisacad.fakedb.AlunoFakeDB;
 
-import java.text.ParseException;
-
 public class AlunoRepo extends BaseRepositorio<AlunoFakeDB, Aluno> {
 
-    public AlunoRepo() throws ParseException {
+    public AlunoRepo(){
         this.db = new AlunoFakeDB();
         this.dataset = this.db.getTabela();
     }

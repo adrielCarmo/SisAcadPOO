@@ -1,10 +1,10 @@
 package udp.poo.sisacad.dominio;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class BasePessoa extends BaseIdentificador implements IImpressao {
     protected String nome;
-    protected Date dataNasc;
+    protected LocalDate dataNasc;
     protected String rg;
     protected String cpf;
     protected Usuario usuario;
@@ -13,14 +13,12 @@ public abstract class BasePessoa extends BaseIdentificador implements IImpressao
     public BasePessoa() {
     }
 
-    public BasePessoa(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco) {
+    public BasePessoa(int id, String nome, LocalDate dataNasc, String rg, String cpf) {
         super(id);
         this.nome = nome;
         this.dataNasc = dataNasc;
         this.rg = rg;
         this.cpf = cpf;
-        this.usuario = usuario;
-        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -31,11 +29,11 @@ public abstract class BasePessoa extends BaseIdentificador implements IImpressao
         this.nome = nome;
     }
 
-    public Date getDataNasc() {
+    public LocalDate getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(Date dataNasc) {
+    public void setDataNasc(LocalDate dataNasc) {
         this.dataNasc = dataNasc;
     }
 

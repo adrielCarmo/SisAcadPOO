@@ -12,7 +12,7 @@ public class TurmaFakeDB extends BaseFakeDB<Turma>{
     private final DisciplinaFakeDB discFakeDB;
     private final AlunoFakeDB alunoFakeDB;
     private final ProfessorFakeDB professorFakeDB;
-    public TurmaFakeDB() throws ParseException {
+    public TurmaFakeDB(){
         super();
         discFakeDB = new DisciplinaFakeDB();
         alunoFakeDB = new AlunoFakeDB();
@@ -64,7 +64,7 @@ public class TurmaFakeDB extends BaseFakeDB<Turma>{
     }
 
     @Override
-    protected void carregarDados() throws ParseException {
+    protected void carregarDados(){
         Turma turma1 = new Turma(1, 30, queryDisciplina(1), queryProfessor(1),queryAluno(1));
         this.tabela.add(turma1);
         Turma turma2 = new Turma(2, 50, queryDisciplina(2), queryProfessor(2),queryAluno(2));

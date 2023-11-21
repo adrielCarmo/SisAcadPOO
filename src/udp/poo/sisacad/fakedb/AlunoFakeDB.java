@@ -2,32 +2,24 @@ package udp.poo.sisacad.fakedb;
 
 import udp.poo.sisacad.dominio.*;
 
-import java.text.ParseException;
+import java.time.LocalDate;
 
 public class AlunoFakeDB extends BaseFakeDB<Aluno>{
-    private final UsuarioFakeDB usuarioFakeDB; //final pois nao pode ser alterado, é somente para consultar os relacionamentos
-    private final EnderecoFakeDB endFakeDB;
-    private final RendimentoEscolarFakeDB rendEscolarFakeDB;
-    private final TurmaFakeDB turmaFakeDB;
-    public AlunoFakeDB() throws ParseException {
+    public AlunoFakeDB(){
         super();
-        usuarioFakeDB = new UsuarioFakeDB();
-        endFakeDB = new EnderecoFakeDB();
-        rendEscolarFakeDB = new RendimentoEscolarFakeDB();
-        turmaFakeDB = new TurmaFakeDB();
     }
 
     @Override
-    protected void carregarDados() throws ParseException {
-        Aluno aluno1 = new Aluno(1, "João da Silva", dateFormat.parse("15/09/2021"), "1234567", "987654321", usuarioFakeDB.getTabela().get(0), endFakeDB.getTabela().get(0), 3, 2023001, true, rendEscolarFakeDB.getTabela().get(1), turmaFakeDB.getTabela().get(1));
+    protected void carregarDados() {
+        Aluno aluno1 = new Aluno(1, "João da Silva", LocalDate.of(2021,9,15), "1234567", "987654321", 3, 2023001, true);
         this.tabela.add(aluno1);
-        Aluno aluno2 = new Aluno(2, "Maria Santos", dateFormat.parse("20/08/2021"), "7654321", "123456789", usuarioFakeDB.getTabela().get(1), endFakeDB.getTabela().get(1), 2, 2023002, false, rendEscolarFakeDB.getTabela().get(2), turmaFakeDB.getTabela().get(1));
+        Aluno aluno2 = new Aluno(2, "Maria Santos", LocalDate.of(2021,8,20), "7654321", "123456789", 2, 2023002, false);
         this.tabela.add(aluno2);
-        Aluno aluno3 = new Aluno(3, "Pedro Alves", dateFormat.parse("11/07/2001"), "9876543", "456789123", usuarioFakeDB.getTabela().get(2), endFakeDB.getTabela().get(2), 4, 2023003, true, rendEscolarFakeDB.getTabela().get(3), turmaFakeDB.getTabela().get(2));
+        Aluno aluno3 = new Aluno(3, "Pedro Alves", LocalDate.of(2001,7,11), "9876543", "456789123", 4, 2023003, true);
         this.tabela.add(aluno3);
-        Aluno aluno4 = new Aluno(4, "Ana Pereira", dateFormat.parse("15/11/2021"), "5432167", "321987654", usuarioFakeDB.getTabela().get(3), endFakeDB.getTabela().get(3), 2, 2023004, false, rendEscolarFakeDB.getTabela().get(4), turmaFakeDB.getTabela().get(2));
+        Aluno aluno4 = new Aluno(4, "Ana Pereira", LocalDate.of(2021,11,15), "5432167", "321987654", 2, 2023004, false);
         this.tabela.add(aluno4);
-        Aluno aluno5 = new Aluno(5, "Carlos Lima", dateFormat.parse("17/01/2015"), "2345678", "654321987", usuarioFakeDB.getTabela().get(4), endFakeDB.getTabela().get(4), 5, 2023005, true, rendEscolarFakeDB.getTabela().get(5), turmaFakeDB.getTabela().get(3));
+        Aluno aluno5 = new Aluno(5, "Carlos Lima", LocalDate.of(2015,1,17), "2345678", "654321987", 5, 2023005, true);
         this.tabela.add(aluno5);
     }
 }

@@ -3,13 +3,12 @@ package udp.poo.sisacad.fakedb;
 import udp.poo.sisacad.dominio.NotaTrabalho;
 import udp.poo.sisacad.dominio.RendimentoEscolar;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class RendimentoEscolarFakeDB extends BaseFakeDB<RendimentoEscolar>{
     private final AlunoFakeDB alunoFakeDB;
     private final NotaTrabalhoFakeDB nTrabFakeDB;
-    public RendimentoEscolarFakeDB() throws ParseException {
+    public RendimentoEscolarFakeDB(){
         super();
         alunoFakeDB = new AlunoFakeDB();
         nTrabFakeDB = new NotaTrabalhoFakeDB();
@@ -27,7 +26,7 @@ public class RendimentoEscolarFakeDB extends BaseFakeDB<RendimentoEscolar>{
     }
 
     @Override
-    protected void carregarDados() throws ParseException {
+    protected void carregarDados(){
         RendimentoEscolar rendimento1 = new RendimentoEscolar(1, 8.5, 7.0, 9.0, 8.0, alunoFakeDB.getTabela().get(1), queryNotaTrab(1));
         this.tabela.add(rendimento1);
         RendimentoEscolar rendimento2 = new RendimentoEscolar(2, 7.0, 8.0, 8.5, 7.5, alunoFakeDB.getTabela().get(2), queryNotaTrab(2));

@@ -1,18 +1,18 @@
 package udp.poo.sisacad.dominio;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Usuario extends BaseIdentificador {
     private String username;
     private String senha;
     private String email;
     private boolean ativo;
-    private Date dataInsercao;
+    private LocalDate dataInsercao;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String username, String senha, String email, boolean ativo, Date dataInsercao) {
+    public Usuario(int id, String username, String senha, String email, boolean ativo, LocalDate dataInsercao) {
         super(id);
         this.username = username;
         this.senha = senha;
@@ -53,11 +53,11 @@ public class Usuario extends BaseIdentificador {
         this.ativo = ativo;
     }
 
-    public Date getDataInsercao() {
+    public LocalDate getDataInsercao() {
         return dataInsercao;
     }
 
-    public void setDataInsercao(Date dataInsercao) {
+    public void setDataInsercao(LocalDate dataInsercao) {
         this.dataInsercao = dataInsercao;
     }
 }

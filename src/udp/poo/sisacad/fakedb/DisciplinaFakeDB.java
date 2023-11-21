@@ -2,16 +2,14 @@ package udp.poo.sisacad.fakedb;
 
 import udp.poo.sisacad.dominio.Disciplina;
 
-import java.text.ParseException;
-
 public class DisciplinaFakeDB extends BaseFakeDB<Disciplina>{
 
-    public DisciplinaFakeDB() throws ParseException {
+    public DisciplinaFakeDB(){
         super();
     }
 
     @Override
-    protected void carregarDados() throws ParseException {
+    protected void carregarDados(){
         Disciplina disciplina1 = new Disciplina(1, "Matemática", "Tópicos avançados em álgebra e geometria.");
         this.tabela.add(disciplina1);
         Disciplina disciplina2 = new Disciplina(2, "História", "História mundial do século XX.");

@@ -1,10 +1,6 @@
 import udp.poo.sisacad.dominio.Aluno;
-import udp.poo.sisacad.dominio.Disciplina;
-import udp.poo.sisacad.dominio.RendimentoEscolar;
-import udp.poo.sisacad.dominio.Turma;
 import udp.poo.sisacad.servico.AlunoServico;
 
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class Menu {
@@ -13,7 +9,7 @@ public class Menu {
         this.r = new Scanner(System.in);
     }
 
-    public void executar() throws ParseException {
+    public void executar(){
         this.menuPrincipal();
     }
 
@@ -22,10 +18,11 @@ public class Menu {
         System.out.println("Bem vindo ao Sistema Acadêmico! Escolha um perfil para acessar o sistema: ");
         System.out.println("1 - Professores");
         System.out.println("2 - Alunos");
+        System.out.println("0 - Sair");
         System.out.print("> ");
     }
 
-    private void menuPrincipal() throws ParseException {
+    private void menuPrincipal(){
         int op;
         do {
             imprimirMenuInicial();
@@ -52,57 +49,20 @@ public class Menu {
 
     }
 
-    private void menuAlunos() throws ParseException {
+    private void menuAlunos(){
+        int idAluno;
+        Aluno aluno;
         AlunoServico alunoServico = new AlunoServico();
 
-        System.out.println("ALUNOS - MENU.");
-        System.out.print("insira o ID do aluno: ");
-        int alunoId = r.nextInt();
+        System.out.println("============ MENU ALUNOS - SISACAD ============\n");
+        System.out.println("Por gentileza, insira o ID do aluno que deseja consultar: ");
+        System.out.print("> ");
+        idAluno = r.nextInt();
 
-        Aluno aluno = alunoServico.obter(alunoId);
+        aluno = alunoServico.obter(idAluno);
 
-        if (aluno != null) {
-            Turma turma = aluno.getTurma();
-
-            System.out.println(aluno.getNome());
-            System.out.println("Turma: " + turma.getId());
-            System.out.println("Capacidade Máxima: " + turma.getCapMaxAlunos());
-
-            System.out.println("Disciplinas da Turma:");
-            for (Disciplina disciplina : turma.getDisciplinas()) {
-                System.out.println("- " + disciplina.getNome());
-            }
-
-            System.out.print("Digite o ID da disciplina para exibir as notas do aluno: ");
-            int disciplinaId = r.nextInt();
-
-            Disciplina disciplinaSelecionada = null;
-            for (Disciplina disciplina : turma.getDisciplinas()) {
-                if (disciplina.getId() == disciplinaId) {
-                    disciplinaSelecionada = disciplina;
-                    break;
-                }
-            }
-
-            if (disciplinaSelecionada != null) {
-                RendimentoEscolar rendimentoEscolar = aluno.getRendEscolar();
-
-                System.out.println("Notas do aluno na disciplina " + disciplinaSelecionada.getNome() + ":");
-
-                System.out.println("Notas de trabalho do aluno na disciplina " + disciplinaSelecionada.getNome() + ":");
-
-                System.out.println("Rendimento Escolar do Aluno:");
-                System.out.println("Nota P1: " + rendimentoEscolar.getNotaP1());
-                System.out.println("Nota P2: " + rendimentoEscolar.getNotaP2());
-                System.out.println("Média de Trabalhos: " + rendimentoEscolar.getMediaTrabalhos());
-                System.out.println("Média Geral: " + rendimentoEscolar.getMediaGeral());
-            } else {
-                System.out.println("Disciplina não encontrada.");
-            }
-        } else {
-            System.out.println("Aluno não encontrado.");
-        }
-        r.close();
+        aluno.imprimir();
+        //r.close();
     }
 }
 

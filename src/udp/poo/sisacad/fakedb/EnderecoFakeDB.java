@@ -5,12 +5,12 @@ import udp.poo.sisacad.dominio.Endereco;
 import java.text.ParseException;
 
 public class EnderecoFakeDB extends BaseFakeDB<Endereco>{
-    public EnderecoFakeDB() throws ParseException {
+    public EnderecoFakeDB(){
         super();
     }
 
     @Override
-    protected void carregarDados() throws ParseException {
+    protected void carregarDados(){
         Endereco endereco1 = new Endereco(1, "Rua A", "Bairro1", 123, "12345-678", "Cidade1", "SP");
         this.tabela.add(endereco1);
         Endereco endereco2 = new Endereco(2, "Rua B", "Bairro2", 456, "98765-432", "Cidade2", "RJ");

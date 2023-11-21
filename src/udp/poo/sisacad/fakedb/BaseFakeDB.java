@@ -1,6 +1,5 @@
 package udp.poo.sisacad.fakedb;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -8,7 +7,7 @@ public abstract class BaseFakeDB<TDom> {
     protected ArrayList<TDom> tabela;
     protected SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    public BaseFakeDB() throws ParseException {
+    public BaseFakeDB(){
         this.tabela = new ArrayList<TDom>();
         this.carregarDados();
     }
@@ -24,5 +23,5 @@ public abstract class BaseFakeDB<TDom> {
         this.tabela = tabela;
     }
 
-    protected abstract void carregarDados() throws ParseException;
+    protected abstract void carregarDados();
 }

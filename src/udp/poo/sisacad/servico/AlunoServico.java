@@ -3,12 +3,11 @@ package udp.poo.sisacad.servico;
 import udp.poo.sisacad.dominio.Aluno;
 import udp.poo.sisacad.repositorio.AlunoRepo;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class AlunoServico extends BaseServico<AlunoRepo, Aluno> {
 
-    public AlunoServico() throws ParseException {
+    public AlunoServico(){
         this.repo = new AlunoRepo();
     }
 

@@ -2,20 +2,18 @@ package udp.poo.sisacad.fakedb;
 
 import udp.poo.sisacad.dominio.NotaTrabalho;
 
-import java.text.ParseException;
-
 public class NotaTrabalhoFakeDB extends BaseFakeDB<NotaTrabalho>{
     private final AlunoFakeDB alunoFakeDB;
     private final TrabalhoFakeDB trabFakeDB;
 
-    public NotaTrabalhoFakeDB() throws ParseException {
+    public NotaTrabalhoFakeDB(){
         super();
         alunoFakeDB = new AlunoFakeDB();
         trabFakeDB = new TrabalhoFakeDB();
     }
 
     @Override
-    protected void carregarDados() throws ParseException {
+    protected void carregarDados() {
         NotaTrabalho nota1 = new NotaTrabalho(1, 8.5, alunoFakeDB.getTabela().get(1), trabFakeDB.getTabela().get(1));
         this.tabela.add(nota1);
         NotaTrabalho nota2 = new NotaTrabalho(2, 7.0, alunoFakeDB.getTabela().get(1), trabFakeDB.getTabela().get(2));

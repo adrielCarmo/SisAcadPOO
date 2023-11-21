@@ -3,11 +3,9 @@ package udp.poo.sisacad.repositorio;
 import udp.poo.sisacad.dominio.Professor;
 import udp.poo.sisacad.fakedb.ProfessorFakeDB;
 
-import java.text.ParseException;
-
 public class ProfessorRepo extends BaseRepositorio<ProfessorFakeDB, Professor>{
 
-    public ProfessorRepo() throws ParseException {
+    public ProfessorRepo(){
         this.db = new ProfessorFakeDB();
         this.dataset = this.db.getTabela();
     }

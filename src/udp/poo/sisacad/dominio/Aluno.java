@@ -1,6 +1,6 @@
 package udp.poo.sisacad.dominio;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Aluno extends BasePessoa{
     private int periodo;
@@ -12,13 +12,11 @@ public class Aluno extends BasePessoa{
     public Aluno() {
     }
 
-    public Aluno(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco, int periodo, int registroAcademico, boolean aprovado, RendimentoEscolar rendEscolar, Turma turma) {
-        super(id, nome, dataNasc, rg, cpf, usuario, endereco);
+    public Aluno(int id, String nome, LocalDate dataNasc, String rg, String cpf, int periodo, int registroAcademico, boolean aprovado) {
+        super(id, nome, dataNasc, rg, cpf);
         this.periodo = periodo;
         this.registroAcademico = registroAcademico;
         this.aprovado = aprovado;
-        this.rendEscolar = rendEscolar;
-        this.turma = turma;
     }
 
     public int getPeriodo() {
@@ -63,16 +61,15 @@ public class Aluno extends BasePessoa{
 
     @Override
     public void imprimir() {
+        System.out.println("\n============ Informações do Aluno: ============");
         System.out.println("ID: " + this.getId());
         System.out.println("Nome: " + this.getNome());
         System.out.println("Data de Nascimento: " + this.getDataNasc());
         System.out.println("RG: " + this.getRg());
         System.out.println("CPF: " + this.getCpf());
-        System.out.println("Usuário: " + this.getUsuario().getUsername());
-        System.out.println("Endereço: " + this.getEndereco().getLogradouro() + ", " + this.getEndereco().getNum() + " - " + this.getEndereco().getBairro());
         System.out.println("Período: " + this.getPeriodo());
         System.out.println("RA: " + this.getRegistroAcademico());
-        System.out.println("ID Turma:" + this.turma.getId());
         System.out.println("Aprovado: " + this.isAprovado());
+        System.out.println("===============================================");
     }
 }

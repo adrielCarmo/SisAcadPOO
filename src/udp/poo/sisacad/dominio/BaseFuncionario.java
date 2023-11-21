@@ -1,18 +1,19 @@
 package udp.poo.sisacad.dominio;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class BaseFuncionario extends BasePessoa {
     protected String setor;
     protected double salario;
-    protected Date dataAdmissao;
-    protected Date dataDemissao;
+    protected LocalDate dataAdmissao;
+    protected LocalDate dataDemissao;
 
     public BaseFuncionario() {
+
     }
 
-    public BaseFuncionario(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco, String setor, double salario, Date dataAdmissao, Date dataDemissao) {
-        super(id, nome, dataNasc, rg, cpf, usuario, endereco);
+    public BaseFuncionario(int id, String nome, LocalDate dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco, String setor, double salario, LocalDate dataAdmissao, LocalDate dataDemissao) {
+        super(id, nome, dataNasc, rg, cpf);
         this.setor = setor;
         this.salario = salario;
         this.dataAdmissao = dataAdmissao;
@@ -35,19 +36,19 @@ public abstract class BaseFuncionario extends BasePessoa {
         this.salario = salario;
     }
 
-    public Date getDataAdmissao() {
+    public LocalDate getDataAdmissao() {
         return dataAdmissao;
     }
 
-    public void setDataAdmissao(Date dataAdmissao) {
+    public void setDataAdmissao(LocalDate dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
     }
 
-    public Date getDataDemissao() {
+    public LocalDate getDataDemissao() {
         return dataDemissao;
     }
 
-    public void setDataDemissao(Date dataDemissao) {
+    public void setDataDemissao(LocalDate dataDemissao) {
         this.dataDemissao = dataDemissao;
     }
 }

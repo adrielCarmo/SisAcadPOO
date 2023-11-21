@@ -3,11 +3,9 @@ package udp.poo.sisacad.repositorio;
 import udp.poo.sisacad.dominio.Disciplina;
 import udp.poo.sisacad.fakedb.DisciplinaFakeDB;
 
-import java.text.ParseException;
-
 public class DisciplinaRepo extends BaseRepositorio<DisciplinaFakeDB, Disciplina>{
 
-    public DisciplinaRepo() throws ParseException {
+    public DisciplinaRepo(){
         this.db = new DisciplinaFakeDB();
         this.dataset = this.db.getTabela();
     }

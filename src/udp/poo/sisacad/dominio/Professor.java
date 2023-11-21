@@ -1,14 +1,15 @@
 package udp.poo.sisacad.dominio;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Professor extends BaseFuncionario{
     private String cargo;
 
-    public Professor() {
+    public Professor(){
+
     }
 
-    public Professor(int id, String nome, Date dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco, String setor, double salario, Date dataAdmissao, Date dataDemissao, String cargo) {
+    public Professor(int id, String nome, LocalDate dataNasc, String rg, String cpf, Usuario usuario, Endereco endereco, String setor, double salario, LocalDate dataAdmissao, LocalDate dataDemissao, String cargo) {
         super(id, nome, dataNasc, rg, cpf, usuario, endereco, setor, salario, dataAdmissao, dataDemissao);
         this.cargo = cargo;
     }
