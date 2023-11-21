@@ -29,3 +29,6 @@ bin/
 .DS_Store
 /diagramas/SisAcad.asta.lock
 /.idea/
+
+### Java ###
+/src/*.class
